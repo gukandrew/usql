@@ -1,0 +1,33 @@
+{
+  "name": "usql",
+  "version": "1.0.0",
+  "description": "Tiny, zero-dependency SQL query generator",
+  "main": "index.js",
+  "repository": "https://github.com/gukandrew/usql",
+  "author": "Andrew Guk",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV='development' yarn run build --watch",
+    "build": "NODE_ENV='production' webpack",
+    "build:babel": "babel src/index.js --out-file ./dist/index.js",
+    "test": "jest ./tests/*",
+    "test:inspect": "NODE_ENV='development' node --inspect-brk ./node_modules/.bin/jest  --watch --runInBand ./tests/*",
+    "test:watch": "yarn dev & yarn run test --watch",
+    "test:watch:inspect": "yarn dev & yarn run test:inspect"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "babel-loader": "^8.0.6",
+    "jest": "^24.9.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-syntax-class-properties": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-syntax-import-meta": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/runtime": "^7.7.6"
+  }
+}
