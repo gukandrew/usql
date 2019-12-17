@@ -6,6 +6,7 @@
   "repository": "https://github.com/gukandrew/usql",
   "author": "Andrew Guk",
   "license": "MIT",
+  "keywords": ["sql", "sqlbuilder", "nodejs", "javascript", "sql", "sqlite3", "postgresql", "mysql", "orm"],
   "scripts": {
     "dev": "NODE_ENV='development' yarn run build --watch",
     "build": "NODE_ENV='production' webpack",
