@@ -1,4 +1,4 @@
-import DB from '../index.js'
+import DB from '../src/index.js'
 
 /* eslint-disable no-multi-str */
 describe('index.js', () => {
