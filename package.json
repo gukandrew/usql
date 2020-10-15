@@ -6,7 +6,17 @@
   "repository": "https://github.com/gukandrew/usql",
   "author": "Andrew Guk",
   "license": "MIT",
-  "keywords": ["sql", "sqlbuilder", "nodejs", "javascript", "sql", "sqlite3", "postgresql", "mysql", "orm"],
+  "keywords": [
+    "sql",
+    "sqlbuilder",
+    "nodejs",
+    "javascript",
+    "sql",
+    "sqlite3",
+    "postgresql",
+    "mysql",
+    "orm"
+  ],
   "scripts": {
     "dev": "NODE_ENV='development' yarn run build --watch",
     "build": "NODE_ENV='production' webpack",
@@ -17,18 +27,18 @@
     "test:watch:inspect": "yarn dev & yarn run test:inspect"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "babel-loader": "^8.0.6",
-    "jest": "^24.9.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-syntax-class-properties": "^7.7.4",
-    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
-    "@babel/plugin-syntax-import-meta": "^7.7.4",
-    "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/runtime": "^7.7.6"
+    "@babel/cli": "~7.12.0",
+    "@babel/core": "~7.7.7",
+    "@babel/plugin-proposal-class-properties": "~7.7.4",
+    "@babel/plugin-syntax-class-properties": "~7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "~7.7.4",
+    "@babel/plugin-syntax-import-meta": "~7.7.4",
+    "@babel/plugin-transform-runtime": "~7.7.6",
+    "@babel/preset-env": "~7.7.7",
+    "@babel/runtime": "~7.7.6",
+    "babel-loader": "~8.0.6",
+    "jest": "~24.9.0",
+    "webpack": "~4.41.6",
+    "webpack-cli": "~3.3.12"
   }
 }
