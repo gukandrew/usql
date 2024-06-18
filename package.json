@@ -1,6 +1,6 @@
 {
   "name": "usql",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tiny, zero-dependency SQL query generator",
   "main": "index.js",
   "repository": "https://github.com/gukandrew/usql",
