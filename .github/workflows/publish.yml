@@ -1,5 +1,9 @@
 name: Publish to NPM
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 on:
   release:
     types: [published]
@@ -8,26 +12,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 12
-      - run: yarn install
-      - run: yarn build
-      - run: yarn test
+          node-version: "24"
+          cache: "pnpm"
+      - run: pnpm install
+      - run: NODE_OPTIONS=--openssl-legacy-provider pnpm run build --if-present
+      - run: pnpm test
 
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-      - run: yarn install
-      - run: yarn build
-      - run: yarn test
-      - run: yarn publish --new-version ${GITHUB_REF#"refs/tags/"} --no-git-tag-version
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          node-version: "24"
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org/"
+      - run: npm -v
+      - run: pnpm install --frozen-lockfile
+      - run: NODE_OPTIONS=--openssl-legacy-provider pnpm run build --if-present
+      - run: pnpm test
+      - run: pnpm publish --no-git-checks
