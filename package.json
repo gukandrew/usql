@@ -18,13 +18,13 @@
     "orm"
   ],
   "scripts": {
-    "dev": "NODE_ENV='development' yarn run build --watch",
+    "dev": "NODE_ENV='development' pnpm run build --watch",
     "build": "NODE_ENV='production' webpack",
     "build:babel": "babel src/index.js --out-file ./dist/index.js",
     "test": "jest ./tests/*",
     "test:inspect": "NODE_ENV='development' node --inspect-brk ./node_modules/.bin/jest  --watch --runInBand ./tests/*",
-    "test:watch": "yarn dev & yarn run test --watch",
-    "test:watch:inspect": "yarn dev & yarn run test:inspect"
+    "test:watch": "pnpm dev & pnpm run test --watch",
+    "test:watch:inspect": "pnpm dev & pnpm run test:inspect"
   },
   "devDependencies": {
     "@babel/cli": "~7.12.0",
@@ -41,5 +41,5 @@
     "webpack": "~4.41.6",
     "webpack-cli": "~3.3.12"
   },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }
